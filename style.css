@@ -1,0 +1,119 @@
+/* ==========Setting the colours and e.t.c============= */
+:root{
+    /* Heading */
+    --fSize: 45px;
+    /* Body */
+    --bodyBack: white;
+    /* Container */
+    --contColor: aliceblue;
+    --bxShadows: aquamarine;
+    /* Input field */
+    --inputBorder: lime;
+    --inputShadow: lightgreen;
+    /* Drawer */
+    --drwBack: white;
+    /* Buttons */
+    --btnColor: aqua;
+    --btnHover: orangered;
+}
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--bodyBack);
+}
+/* ===============Styling the Heading=============== */
+#Heading{
+    font-size: var(--fSize);
+}
+/* =============Styling the bigger container=========== */
+.container{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+    margin-left: 15vw;
+    height: 90vh;
+    margin-top: 5vh;
+    border: 1px solid var(--contColor);
+    background-color: var(--contColor);
+    border-radius: 1%;
+    box-shadow: 5px 5px 10px var(--bxShadows);
+}
+/* ==============Styling the input field=========== */
+#cash{
+    width:30vw;
+    height: 5vh;
+    margin-bottom: 2vh;
+    padding-left: 1vw;
+    font-size: 20px;
+    border: 2px solid var(--inputBorder);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px var(--inputShadow);
+}
+h1, .lblContainer, #itemPrice,#change-due{
+    align-self: center;
+    justify-self: center;
+}
+#change-due{
+    height: 10%;
+}
+/* ===========Styling the field where we take inputs========= */
+label{
+    font-size: 20px;
+}
+#itemPrice, #purchase-btn{
+    margin-bottom: 2vh;
+}
+#itemPrice, #change-due{
+    font-size: 25px;
+    font-weight: 500;
+}
+/* =============Styling the drawer================= */
+.drwContainer{
+    margin-top: 1vh;
+    height: 40vh;
+    width: 90%;
+    background-color: var(--bxShadows);
+    margin-left: 5%;
+    border-radius: 5px;
+}
+.drawer{
+    /* display: none; */
+    width: 90%;
+    height: 80%;
+    background-color: var(--drwBack);
+    margin-left: 5%;
+    padding-top: 10px;
+}
+/* ============Styling the buttons================= */
+#purchase-btn, .drwContainer button{
+    margin-left: 5%;
+    width: 90%;
+    height:4vh;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--btnColor);
+    box-shadow: 5px 5px 10px var(--drwBack);
+    font-size: 15px;
+}
+#purchase-btn:hover, button:hover{
+    cursor:pointer;
+    background-color: var(--drwBack);
+    border: 2px solid var(--btnColor);
+    box-shadow: 5px 5px 10px var(--btnHover);
+    transform: scale(1.05);
+}
+/* ==================media Query for the drawer=============== */
+@media screen and (max-width: 1200px) {
+    .drwContainer{
+        height: min-content;
+    }
+    .drawer{
+        display: block;
+        overflow-x:scroll;
+        height: 25vh;
+        scrollbar-width: thin;
+        /* scrollbar-color: var(--btnColor) var(--drwBack); */
+    }
+}
