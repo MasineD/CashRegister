@@ -7,7 +7,7 @@ const userInput = document.getElementById("cash");
 const changeDue = document.getElementById('change-due');
 
 // ===========Default values provided============
-let price = 1.87;
+let price = 18.7;
 let cid = [
   ['PENNY', 1.01],
   ['NICKEL', 2.05],
@@ -23,7 +23,7 @@ let cid = [
 // ==========Processing the data from HTML==========
 
 // =========Sending back the output to the HTML=======
-itemPrice.textContent = `$${price}`;
+itemPrice.textContent = `R${price}`;
 
 // ======Create a table for the drawer=========
 const headers = [];
@@ -106,7 +106,7 @@ function processInput(price, cid) {
   const formattedChange = cid
     .filter(([_, amount]) => amount > 0)
     .reverse()
-    .map(([name, amount]) => `${name}: $${amount.toFixed(2)}`)
+    .map(([name, amount]) => `${name}: R${amount.toFixed(2)}`)
     .join(', ');
   changeDue.textContent = `Status: CLOSED${formattedChange ? ' ' + formattedChange : ''}`;
   return;
@@ -149,7 +149,7 @@ function processInput(price, cid) {
     changeDue.textContent = "Status: INSUFFICIENT_FUNDS";
     return;
   } else {
-    const formattedChange = changeArr.map(([name, amt]) => `${name}: $${amt}`).join(', ');
+    const formattedChange = changeArr.map(([name, amt]) => `${name}: R${amt}`).join(', ');
     table.style.display = 'table'
     drwBtn.textContent = "CLOSE DRAWER";
     changeDue.textContent = `Status: OPEN ${formattedChange}`;
